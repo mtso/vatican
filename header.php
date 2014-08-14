@@ -9,6 +9,16 @@
 		<link rel="stylesheet" href="<?php echo theme_url('/css/reset.css'); ?>">
 		<link rel="stylesheet" href="<?php echo theme_url('/css/style.css'); ?>">
 		<link rel="stylesheet" href="<?php echo theme_url('/css/small.css'); ?>" media="(max-width: 400px)">
+        
+        <!-- Add per-post CSS -->
+		<?php if(article_css()): ?>
+			<style><?php echo article_css(); ?></style>
+		<?php endif; ?>
+		
+		<!-- Add per-post JS -->
+		<?php if(article_js()): ?>
+			<script><?php echo article_js(); ?></script>
+		<?php endif; ?>
 
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo rss_url(); ?>">
 		<link rel="shortcut icon" href="<?php echo theme_url('img/favicon.png'); ?>">
@@ -42,7 +52,31 @@
 	<body class="<?php echo body_class(); ?>">
 		<div class="main-wrap">
             
-            <!--
+            <div class="side-nav-main">
+                <a id="logo" href="<?php echo base_url(); ?>"><?php echo site_name(); ?></a>
+<!--                <h1 id="sitename"><?php echo site_name(); ?></h1>-->
+                <ul>
+                <?php while(categories()): ?>
+                    <li>
+                        <a href="<?php echo category_url(); ?>" title"<?php echo category_description(); ?>"><?php echo category_title(); ?> <?php echo category_count(); ?></a>
+                    </li>
+                <?php endwhile; ?>
+                </ul>
+            </div>
+            <br /><br /><br />
+            <div class="side-nav-entries">
+                <ul>
+                <?php if(has_posts()): ?>
+                    <?php while(posts()): ?>
+                    <li>
+                        <a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>"><?php echo article_title(); ?></a>
+                    </li>
+                    <?php endwhile; ?>    
+                <?php endif; ?>
+                </ul>
+            </div>
+            
+<!--
 			<div class="slidey" id="tray">
 				<div class="wrap">
 					<form id="search" action="<?php echo search_url(); ?>" method="post">
@@ -86,4 +120,4 @@
 				</nav>
 				<?php endif; ?>
 			</header>
--->
+            -->

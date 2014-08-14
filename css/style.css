@@ -1,8 +1,32 @@
 /**
- *
+ * Vatican Theme style by mzzter, 2014.
+ */
+.main-wrap{
+    height:100%;
+    width:100%;
+}
+.side-nav-main {
+    height:100%
+    width: 300px;
+    background-color: #999;
+    float:left;
+    position:absolute;
+    display:inline-block;
+}
+.side-nav-entries{
+    height:100%
+    width: 300px;
+    background-color: #aaa;
+    float:left;
+    position:absolute;
+    display:inline-block;
+}
+
+/**
+ * DEFAULT STYLES BELOW
  */
 
-h1 {
+/*h1 {
 	padding: 80px 0 40px;
 
 	font-size: 40px;
@@ -14,7 +38,7 @@ h1 {
 	}
 
 /* The slide-down panel at the very top of the page. Like literally. It's above the page, hidden. */
-.slidey {
+/*.slidey {
 	overflow: hidden;
 	padding: 30px 0;
 
@@ -112,7 +136,7 @@ h1 {
 /**
  *   Index page listing, category listing, search page results
  */
-.items {
+/*.items {
 	list-style: none;
 }
 	.items > li {
@@ -160,7 +184,7 @@ h1 {
 /**
  *   Pagination
  */
-.pagination {
+/*.pagination {
 	overflow: hidden;
 	padding: 30px 0;
 	margin-bottom: 50px;
@@ -190,7 +214,7 @@ h1 {
 /**
  *   Give some extra space to single-page wrappers
  */
-.content.wrap {
+/*.content.wrap {
 	padding-bottom: 50px;
 }
 	.content.wrap ul, .content.wrap ol, .items li ul {
@@ -203,7 +227,7 @@ h1 {
 /**
  *   Footnotes and straplines
  */
-.footnote, .commentlist time, .items footer {
+/*.footnote, .commentlist time, .items footer {
 	display: block;
 	padding: 5px 0 15px;
 
@@ -220,7 +244,7 @@ h1 {
 /**
  *   Comment form
  */
-ul.commentlist {
+/*ul.commentlist {
 	margin-bottom: 40px;
 
 	list-style: none;
@@ -311,7 +335,7 @@ ul.commentlist {
 /**
  *   Footer
  */
-#bottom {
+/*#bottom {
 	padding: 30px 0 40px;
 }
 	#bottom ul {
