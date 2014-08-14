@@ -9,16 +9,6 @@
 		<link rel="stylesheet" href="<?php echo theme_url('/css/reset.css'); ?>">
 		<link rel="stylesheet" href="<?php echo theme_url('/css/style.css'); ?>">
 		<link rel="stylesheet" href="<?php echo theme_url('/css/small.css'); ?>" media="(max-width: 400px)">
-        
-        <!-- Add per-post CSS -->
-		<?php if(article_css()): ?>
-			<style><?php echo article_css(); ?></style>
-		<?php endif; ?>
-		
-		<!-- Add per-post JS -->
-		<?php if(article_js()): ?>
-			<script><?php echo article_js(); ?></script>
-		<?php endif; ?>
 
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo rss_url(); ?>">
 		<link rel="shortcut icon" href="<?php echo theme_url('img/favicon.png'); ?>">
@@ -52,72 +42,19 @@
 	<body class="<?php echo body_class(); ?>">
 		<div class="main-wrap">
             
-            <div class="side-nav-main">
-                <a id="logo" href="<?php echo base_url(); ?>"><?php echo site_name(); ?></a>
-<!--                <h1 id="sitename"><?php echo site_name(); ?></h1>-->
+            <div class="side-nav">
+                <a id="logo-psyche" href="<?php echo base_url(); ?>"><?php echo site_name(); ?></a>
                 <ul>
-                <?php while(categories()): ?>
-                    <li>
-                        <a href="<?php echo category_url(); ?>" title"<?php echo category_description(); ?>"><?php echo category_title(); ?> <?php echo category_count(); ?></a>
-                    </li>
-                <?php endwhile; ?>
-                </ul>
-            </div>
-            <br /><br /><br />
-            <div class="side-nav-entries">
-                <ul>
-                <?php if(has_posts()): ?>
                     <?php while(posts()): ?>
                     <li>
                         <a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>"><?php echo article_title(); ?></a>
                     </li>
-                    <?php endwhile; ?>    
-                <?php endif; ?>
+                    <?php endwhile; ?>
+                    <li>&#8212;</li>
+                    <?php while(menu_items()): ?>
+                    <li>
+                        <a href="<?php echo menu_url(); ?>" title="<?php echo menu_title(); ?>"><?php echo menu_name(); ?></a>
+                    </li>
+                    <?php endwhile; ?>
                 </ul>
             </div>
-            
-<!--
-			<div class="slidey" id="tray">
-				<div class="wrap">
-					<form id="search" action="<?php echo search_url(); ?>" method="post">
-						<label for="term">Search my blog:</label>
-						<input type="search" id="term" name="term" placeholder="To search, type and hit enter&hellip;" value="<?php echo search_term(); ?>">
-					</form>
-
-					<aside>
-						<b>Categories</b>
-						<ul>
-						<?php while(categories()): ?>
-							<li>
-								<a href="<?php echo category_url(); ?>" title="<?php echo category_description(); ?>">
-									<?php echo category_title(); ?> <span><?php echo category_count(); ?></span>
-								</a>
-							</li>
-						<?php endwhile; ?>
-						</ul>
-					</aside>
-				</div>
-			</div>
-
-			<header id="top">
-				<a id="logo" href="<?php echo base_url(); ?>"><?php echo site_name(); ?></a>
-
-				<?php if(has_menu_items()): ?>
-				<nav id="main" role="navigation">
-					<ul>
-						<?php while(menu_items()): ?>
-						<li <?php echo (menu_active() ? 'class="active"' : ''); ?>>
-							<a href="<?php echo menu_url(); ?>" title="<?php echo menu_title(); ?>">
-								<?php echo menu_name(); ?>
-							</a>
-						</li>
-						<?php endwhile; ?>
-
-						<li class="tray">
-							<a href="#tray" class="linky"><img src="<?php echo theme_url('img/categories.png'); ?>" alt="Categories" title="View my posts by category"></a>
-						</li>
-					</ul>
-				</nav>
-				<?php endif; ?>
-			</header>
-            -->
